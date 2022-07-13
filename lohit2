@@ -1,0 +1,20 @@
+
+
+
+
+
+
+---
+- hosts: all
+  tasks:
+   - name:  creating a file with
+     file:
+        path: /opt/{{item}}
+        state:directory
+        owner: root
+        group: root
+        mode: 0724
+   with_items:
+     -directory1
+     -directory2
+     -directory3 
